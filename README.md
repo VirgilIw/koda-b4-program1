@@ -1,14 +1,29 @@
-# 📒 Aplikasi Catatan CLI (Command Line Interface)
+# Flowchart Note App
 
-Aplikasi sederhana berbasis Node.js untuk menambahkan, melihat, dan menghapus catatan langsung dari terminal.
+```mermaid
+flowchart TB
 
----
 
-## 🚀 Fitur
+start((start))
+stop(((stop)))
 
-- Tambah catatan baru
-- Lihat semua catatan
-- Hapus catatan berdasarkan nomor
-- Keluar dari aplikasi dengan rapi
+menuUtama@{shape: lean-r, label: "menuUtama()"}
+tanya@{shape: decision, label: "silahkan pilih :"}
+addNote@{shape: rect, label: "addNote()"}
+lookNote@{shape:rect, label: "lookNote()"}
+deleteNote@{shape:rect, label: "deleteNote()"}
+exit@{shape: rect, label: "exit()"}
+false@{shape: lean-r, label: error}
 
----
+
+start--->menuUtama--->tanya
+tanya--true = 1--->addNote
+addNote-->tanya
+tanya--true = 2--->lookNote
+lookNote--->tanya
+tanya--true = 3--->deleteNote
+deleteNote--->tanya
+tanya--true = 4--->exit--->stop
+tanya--false--->false--->menuUtama
+
+```
