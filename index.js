@@ -1,3 +1,3 @@
-import { addNote } from "./lib/addNote.js";
+import { menuUtama } from "./lib/menuUtama.js";
 
-addNote();
+menuUtama();
